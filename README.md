@@ -38,7 +38,7 @@ As we'll see in the next lab, these linkage criteria can definitely have an effe
 It's often easier to understand what the HAC algorithm is doing when we look at the decisions it makes at each given step. The following diagram demonstrates the clusters created at each step for a dataset of 16 points. Take a look at the diagram and see if you can figure out what the algorithm is doing at each step as it merges clusters together:
 
 
-<img src='images/hac_iterative.png'>
+<img src='images/new_hac_iterative.png'>
 
 
 As we can see from the diagram above, in each step, the algorithm takes the two clusters that are closest together (and remember, we define "closest together" according to whichever linkage criteria we choose to use), and then **_merge_** those two clusters together into a single cluster. We don't move the data points or anything like that--we just consider them as a single unit, as opposed to two separate ones. This works at every stage, because in the beginning, we just treat each data point as a unique cluster. 
@@ -55,7 +55,7 @@ One advantage of HAC is that we can easily visualize the results **_at any give 
 
 We can also visualize the same information by drawing lines representing each cluster at each step to create a _Clustergram_. Take a look at the following diagram below, which shows both a dendrogram and clustergram of the same HAC results:
 
-<img src='images/clustergram.png'>
+<img src='images/new_clustergram.png' width='600'>
 
 ### How Is HAC Used?
 
@@ -64,3 +64,8 @@ HAC algorithms are used in generally the same way that K-Means and other cluster
 ## Summary
 
 In this lesson, we learned about how the HAC algorithm derives its clusters, including different linkage criteria that can be used to determine which clusters should be merged at any given point. We also examined some visualizations of HAC algorithms, in the forms of dendrograms and clustergrams!
+
+
+```python
+
+```
