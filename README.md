@@ -38,24 +38,24 @@ As we'll see in the next lab, these linkage criteria can definitely have an effe
 It's often easier to understand what the HAC algorithm is doing when we look at the decisions it makes at each given step. The following diagram demonstrates the clusters created at each step for a dataset of 16 points. Take a look at the diagram and see if you can figure out what the algorithm is doing at each step as it merges clusters together:
 
 
-<img src='images/new_hac_iterative.png'>
+<img src='https://raw.githubusercontent.com/learn-co-curriculum/dsc-hierarchical-agglomerative-clustering/master/images/hac_iterative.png' alt="initialization through step 14 of HAC algorithm">
 
 
 As we can see from the diagram above, in each step, the algorithm takes the two clusters that are closest together (and remember, we define "closest together" according to whichever linkage criteria we choose to use), and then **_merge_** those two clusters together into a single cluster. We don't move the data points or anything like that -- we just consider them as a single unit, as opposed to two separate ones. This works at every stage because in the beginning, we treat each data point as a unique cluster. 
 
 This becomes very intuitive when we look at the following gif -- pay attention to the image on the left:
 
-<img src='images/dendrogram_gif.gif'>
+<img src='https://raw.githubusercontent.com/learn-co-curriculum/dsc-hierarchical-agglomerative-clustering/master/images/dendrogram_gif.gif' alt="animation of clusters shown in x-y space on the left and a dendrogram on the right, showing which clusters correspond to which parts of the dendrogram">
 
 As the dots disappear, the visualization is replacing them with the newly calculated center of that cluster, which will be used for linkage purposes. Now, let's end this lesson by talking about visualizations we can use to interpret results!
 
 ### Dendrograms and Clustergrams
 
-One advantage of HAC is that we can easily visualize the results **_at any given step_** using visualizations such as **_Dendrograms_** and **_Clustergrams_**. Take another look at the gif above, but this time, pay attention to the image on the right.  This is a _dendrogram,_ which is used to visualize the hierarchical relationship between the various clusters that are computed throughout each step. Dendrograms are very useful to decide how clusters change depending on the euclidian distance. If you decide that your intra-cluster euclidian distance should be smaller than 3, you can draw a horizontal line at euclidian distance 3, and define which points belong to which cluster by looking at the dendrogram. For the gif above, this means that there are three clusters: cluster one contains $p_0$, $p_1$ and $p_2$, cluster two contains $p_3$, cluster three contains $p_4$, $p_5$ and $p_6$.
+One advantage of HAC is that we can easily visualize the results **_at any given step_** using visualizations such as **_Dendrograms_** and **_Clustergrams_**. Take another look at the gif above, but this time, pay attention to the image on the right.  This is a _dendrogram,_ which is used to visualize the hierarchical relationship between the various clusters that are computed throughout each step. Dendrograms are very useful to decide how clusters change depending on the euclidean distance. If you decide that your intra-cluster euclidean distance should be smaller than 3, you can draw a horizontal line at euclidean distance 3, and define which points belong to which cluster by looking at the dendrogram. For the gif above, this means that there are three clusters: cluster one contains $p_0$, $p_1$ and $p_2$, cluster two contains $p_3$, cluster three contains $p_4$, $p_5$ and $p_6$.
 
 We can also visualize the same information by drawing lines representing each cluster at each step to create a _clustergram_. Take a look at the following diagram below, which shows both a dendrogram and clustergram of the same HAC results:
 
-<img src='images/new_clustergram.png' width='600'>
+<img src='https://raw.githubusercontent.com/learn-co-curriculum/dsc-hierarchical-agglomerative-clustering/master/images/new_clustergram.png' alt="another view of clusters on the left and dendrogram on the right" width='600'>
 
 ### How is HAC used?
 
